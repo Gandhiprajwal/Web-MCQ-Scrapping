@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ScrapeRequest, ScrapeResponse, ExportResponse, Question } from '../types';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
 export const scrapeWebsite = async (data: ScrapeRequest): Promise<ScrapeResponse> => {
   try {
